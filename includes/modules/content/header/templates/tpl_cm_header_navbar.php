@@ -73,11 +73,11 @@ code;
             }else if((int)$level_id==0 ) {
                 $cpath = buildBreadcrumb($category['id'],null,$category_tree);
                 $display .= '<li class="nav-item">';
-                $display .= '  <a class="nav-link" href="' . tep_href_link('index.php', 'cPath=' . $cpath) . '">' . $category['name'] . ' (' . $cpath . ')</a>';
+                $display .= '  <a class="nav-link" href="' . tep_href_link('index.php', 'cPath=' . $cpath) . '">' . $category['name'] . '</a>';
                 $display .= '</li>';
             }else{
                 $cpath = buildBreadcrumb($category['id'],null,$category_tree);
-                $display .= '  <a class="dropdown-item" href="' . tep_href_link('index.php', 'cPath=' . $cpath) . '">' . $category['name'] . ' (' . $cpath . ')</a>';
+                $display .= '  <a class="dropdown-item" href="' . tep_href_link('index.php', 'cPath=' . $cpath) . '">' . $category['name'] . '</a>';
             }
         }
         return $display;
