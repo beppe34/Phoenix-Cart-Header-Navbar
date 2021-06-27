@@ -63,9 +63,13 @@ code;
                     $display .= '  </div>';
                     $display .= '</li>';
                 }else{
-                    $display .= '<div class="dropdown dropright">';
-                    $display .= '  <a class="dropdown-item dropdown-toggle" href="#" id="dropdown-layouts" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' . $category['name'] . '</a>';
-                    $display .= '  <div class="dropdown-menu" aria-labelledby="dropdown-layouts">';
+                    $display .= '<div class="dropdown dropdown-hover dropright">';
+                    $display .= '  <a class="dropdown-item dropdown-toggle" href="#" id="ddcat' . $category['id'] . '" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' . $category['name'] . '</a>';
+                    $display .= '  <div class="dropdown-menu" aria-labelledby="ddcat' . $category['id'] . '">';
+                    // header for sub category
+                    $cpath = buildBreadcrumb($category['id'],null,$category_tree);                    
+                    $display .= '  <a class="dropdown-item" href="' . tep_href_link('index.php', 'cPath=' . $cpath) . '"><span class="fas fa-list"></span><strong>&nbsp;' . $category['name'] . '</strong></a>';
+                    $display .= '  <div class="dropdown-divider"></div>';
                     $display .= buildcategorymenu($category_tree,$c_id);
                     $display .= '  </div>';
                     $display .= '</div>';                    
