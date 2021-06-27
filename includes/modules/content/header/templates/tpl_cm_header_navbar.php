@@ -71,13 +71,23 @@ code;
                     $display .= '</div>';                    
                 }
             }else if((int)$level_id==0 ) {
+                $cpath = buildBreadcrumb($category['id'],null,$category_tree);
                 $display .= '<li class="nav-item">';
-                $display .= '  <a class="nav-link" href="' . tep_href_link('index.php', 'cPath=' . $category['id']) . '">' . $category['name'] . '</a>';
+                $display .= '  <a class="nav-link" href="' . tep_href_link('index.php', 'cPath=' . $cpath) . '">' . $category['name'] . ' (' . $cpath . ')</a>';
                 $display .= '</li>';
             }else{
-                $display .= '  <a class="dropdown-item" href="' . tep_href_link('index.php', 'cPath=' . $category['id']) . '">' . $category['name'] . '</a>';
+                $cpath = buildBreadcrumb($category['id'],null,$category_tree);
+                $display .= '  <a class="dropdown-item" href="' . tep_href_link('index.php', 'cPath=' . $cpath) . '">' . $category['name'] . ' (' . $cpath . ')</a>';
             }
         }
         return $display;
     }
+    
+    function buildBreadcrumb($id, $level = null,$tree) {
+      $ancestors = array_reverse($tree->get_ancestors($id));
+      $ancestors[] = $id;
+      
+      return implode('_', $ancestors);
+    }
+
 ?>
