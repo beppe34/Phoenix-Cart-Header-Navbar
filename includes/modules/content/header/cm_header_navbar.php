@@ -56,7 +56,7 @@
           'title' => 'Background Colour Scheme',
           'value' => 'bg-light',
           'desc' => 'What background colour should this Navigation Bar have?  See https://getbootstrap.com/docs/4.4/utilities/colors/#background-color',
-          'set_func' => "tep_cfg_select_option(['bg-primary', 'bg-secondary', 'bg-success', 'bg-danger', 'bg-warning', 'bg-info', 'bg-light', 'bg-dark', 'bg-white'], ",
+          'set_func' => "tep_cfg_select_option(['bg-primary', 'bg-secondary', 'bg-success', 'bg-danger', 'bg-warning', 'bg-info', 'bg-light', 'bg-dark', 'bg-white', 'bg-transparent'], ",
         ],
         'MODULE_CONTENT_HEADER_NAVBAR_STYLE_FG' => [
           'title' => 'Link Colour Scheme',
